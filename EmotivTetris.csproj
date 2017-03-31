@@ -8,8 +8,8 @@
     <ProjectGuid>{DB726B50-877A-4ED9-B8B4-B398F2EC7987}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>emotiv</RootNamespace>
-    <AssemblyName>emotiv</AssemblyName>
+    <RootNamespace>EmotivTetris</RootNamespace>
+    <AssemblyName>EmotivTetris</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -66,6 +66,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -76,6 +77,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmotivSdk\examples_basic\C#\DotNetEmotivSDK\DotNetEmotivSDK.csproj">
+      <Project>{D3337309-9682-425E-8EDC-2ECFACF79565}</Project>
+      <Name>DotNetEmotivSDK</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

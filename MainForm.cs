@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace emotiv
+namespace EmotivTetris
 {
     public partial class MainForm : Form
     {

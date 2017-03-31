@@ -1,4 +1,4 @@
-﻿namespace emotiv
+﻿namespace EmotivTetris
 {
     partial class MainForm
     {
