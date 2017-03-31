@@ -15,12 +15,16 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Debug|x64.ActiveCfg = Debug|x86
+		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Debug|x64.ActiveCfg = Debug|x64
+		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Debug|x64.Build.0 = Debug|x64
 		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Debug|x86.ActiveCfg = Debug|x86
 		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Debug|x86.Build.0 = Debug|x86
-		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Release|Any CPU.ActiveCfg = Release|x86
-		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Release|x64.ActiveCfg = Release|x86
+		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Release|x64.ActiveCfg = Release|x64
+		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Release|x64.Build.0 = Release|x64
 		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Release|x86.ActiveCfg = Release|x86
 		{DB726B50-877A-4ED9-B8B4-B398F2EC7987}.Release|x86.Build.0 = Release|x86
 		{D3337309-9682-425E-8EDC-2ECFACF79565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
