@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
+using Emotiv;
 
 namespace EmotivTetris
 {
     public partial class MainForm : Form
     {
+        public static Sensors sensors
+            = new Sensors();
+
         public MainForm()
         {
             InitializeComponent();
@@ -28,6 +32,11 @@ namespace EmotivTetris
             // right
             webBrowser.Focus();
             SendKeys.Send("{RIGHT}");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            sensors.Show();
         }
     }
 }

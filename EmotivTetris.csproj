@@ -107,6 +107,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sensors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sensors.Designer.cs">
+      <DependentUpon>Sensors.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebBrowserHelper.cs" />
+    <EmbeddedResource Include="Sensors.resx">
+      <DependentUpon>Sensors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,11 +155,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\EmotivSdk\bin\win64\edk.dll">
+    <Content Include="..\EmotivSdk\bin\win32\edk.dll">
       <Link>edk.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Misc\sensorEarBlack.png" />
+    <None Include="Misc\sensorBlack.png" />
+    <None Include="Misc\sensorYellow.png" />
+    <None Include="Misc\sensorRed.png" />
+    <None Include="Misc\sensorGreen.png" />
+    <None Include="Misc\sensorEarYellow.png" />
+    <None Include="Misc\sensorEarRed.png" />
+    <None Include="Misc\sensorEarGreen.png" />
+    <None Include="Misc\sensors.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
