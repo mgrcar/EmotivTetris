@@ -94,22 +94,22 @@
             // batteryLevel
             // 
             this.batteryLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.batteryLevel.Image = global::EmotivTetris.Properties.Resources.sensorEarBlack;
+            this.batteryLevel.Image = global::EmotivTetris.Properties.Resources.sensorBlack30;
             this.batteryLevel.Location = new System.Drawing.Point(157, 45);
             this.batteryLevel.Name = "batteryLevel";
             this.batteryLevel.Size = new System.Drawing.Size(30, 30);
-            this.batteryLevel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.batteryLevel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.batteryLevel.TabIndex = 21;
             this.batteryLevel.TabStop = false;
             // 
             // signalStrength
             // 
             this.signalStrength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.signalStrength.Image = global::EmotivTetris.Properties.Resources.sensorBlack;
+            this.signalStrength.Image = global::EmotivTetris.Properties.Resources.sensorBlack30;
             this.signalStrength.Location = new System.Drawing.Point(157, 9);
             this.signalStrength.Name = "signalStrength";
             this.signalStrength.Size = new System.Drawing.Size(30, 30);
-            this.signalStrength.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.signalStrength.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.signalStrength.TabIndex = 18;
             this.signalStrength.TabStop = false;
             // 
@@ -120,7 +120,7 @@
             this.sensorO2.Location = new System.Drawing.Point(328, 432);
             this.sensorO2.Name = "sensorO2";
             this.sensorO2.Size = new System.Drawing.Size(40, 40);
-            this.sensorO2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorO2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorO2.TabIndex = 17;
             this.sensorO2.TabStop = false;
             // 
@@ -131,7 +131,7 @@
             this.sensorO1.Location = new System.Drawing.Point(248, 432);
             this.sensorO1.Name = "sensorO1";
             this.sensorO1.Size = new System.Drawing.Size(40, 40);
-            this.sensorO1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorO1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorO1.TabIndex = 16;
             this.sensorO1.TabStop = false;
             // 
@@ -142,7 +142,7 @@
             this.sensorP8.Location = new System.Drawing.Point(368, 368);
             this.sensorP8.Name = "sensorP8";
             this.sensorP8.Size = new System.Drawing.Size(40, 40);
-            this.sensorP8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorP8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorP8.TabIndex = 14;
             this.sensorP8.TabStop = false;
             // 
@@ -153,7 +153,7 @@
             this.sensorP7.Location = new System.Drawing.Point(200, 368);
             this.sensorP7.Name = "sensorP7";
             this.sensorP7.Size = new System.Drawing.Size(40, 40);
-            this.sensorP7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorP7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorP7.TabIndex = 13;
             this.sensorP7.TabStop = false;
             // 
@@ -164,7 +164,7 @@
             this.sensorF8.Location = new System.Drawing.Point(400, 160);
             this.sensorF8.Name = "sensorF8";
             this.sensorF8.Size = new System.Drawing.Size(40, 40);
-            this.sensorF8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorF8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorF8.TabIndex = 12;
             this.sensorF8.TabStop = false;
             // 
@@ -175,29 +175,29 @@
             this.sensorF7.Location = new System.Drawing.Point(168, 160);
             this.sensorF7.Name = "sensorF7";
             this.sensorF7.Size = new System.Drawing.Size(40, 40);
-            this.sensorF7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorF7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorF7.TabIndex = 11;
             this.sensorF7.TabStop = false;
             // 
             // sensorAf4Fp2
             // 
             this.sensorAf4Fp2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.sensorAf4Fp2.Image = global::EmotivTetris.Properties.Resources.sensorBlack;
+            this.sensorAf4Fp2.Image = ((System.Drawing.Image)(resources.GetObject("sensorAf4Fp2.Image")));
             this.sensorAf4Fp2.Location = new System.Drawing.Point(352, 112);
             this.sensorAf4Fp2.Name = "sensorAf4Fp2";
             this.sensorAf4Fp2.Size = new System.Drawing.Size(40, 40);
-            this.sensorAf4Fp2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorAf4Fp2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorAf4Fp2.TabIndex = 10;
             this.sensorAf4Fp2.TabStop = false;
             // 
             // sensorAf3Fp1
             // 
             this.sensorAf3Fp1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.sensorAf3Fp1.Image = global::EmotivTetris.Properties.Resources.sensorBlack;
+            this.sensorAf3Fp1.Image = ((System.Drawing.Image)(resources.GetObject("sensorAf3Fp1.Image")));
             this.sensorAf3Fp1.Location = new System.Drawing.Point(216, 112);
             this.sensorAf3Fp1.Name = "sensorAf3Fp1";
             this.sensorAf3Fp1.Size = new System.Drawing.Size(40, 40);
-            this.sensorAf3Fp1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorAf3Fp1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorAf3Fp1.TabIndex = 9;
             this.sensorAf3Fp1.TabStop = false;
             // 
@@ -208,7 +208,7 @@
             this.sensorF4.Location = new System.Drawing.Point(320, 160);
             this.sensorF4.Name = "sensorF4";
             this.sensorF4.Size = new System.Drawing.Size(40, 40);
-            this.sensorF4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorF4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorF4.TabIndex = 8;
             this.sensorF4.TabStop = false;
             // 
@@ -219,7 +219,7 @@
             this.sensorF3.Location = new System.Drawing.Point(248, 160);
             this.sensorF3.Name = "sensorF3";
             this.sensorF3.Size = new System.Drawing.Size(40, 40);
-            this.sensorF3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorF3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorF3.TabIndex = 7;
             this.sensorF3.TabStop = false;
             // 
@@ -230,7 +230,7 @@
             this.sensorFc6.Location = new System.Drawing.Point(368, 200);
             this.sensorFc6.Name = "sensorFc6";
             this.sensorFc6.Size = new System.Drawing.Size(40, 40);
-            this.sensorFc6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorFc6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorFc6.TabIndex = 6;
             this.sensorFc6.TabStop = false;
             // 
@@ -241,7 +241,7 @@
             this.sensorFc5.Location = new System.Drawing.Point(200, 200);
             this.sensorFc5.Name = "sensorFc5";
             this.sensorFc5.Size = new System.Drawing.Size(40, 40);
-            this.sensorFc5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorFc5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorFc5.TabIndex = 5;
             this.sensorFc5.TabStop = false;
             // 
@@ -252,7 +252,7 @@
             this.sensorT7.Location = new System.Drawing.Point(152, 248);
             this.sensorT7.Name = "sensorT7";
             this.sensorT7.Size = new System.Drawing.Size(40, 40);
-            this.sensorT7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorT7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorT7.TabIndex = 4;
             this.sensorT7.TabStop = false;
             // 
@@ -263,29 +263,29 @@
             this.sensorT8.Location = new System.Drawing.Point(416, 248);
             this.sensorT8.Name = "sensorT8";
             this.sensorT8.Size = new System.Drawing.Size(40, 40);
-            this.sensorT8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorT8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorT8.TabIndex = 3;
             this.sensorT8.TabStop = false;
             // 
             // sensorDrlP4
             // 
             this.sensorDrlP4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.sensorDrlP4.Image = global::EmotivTetris.Properties.Resources.sensorEarBlack;
+            this.sensorDrlP4.Image = ((System.Drawing.Image)(resources.GetObject("sensorDrlP4.Image")));
             this.sensorDrlP4.Location = new System.Drawing.Point(400, 312);
             this.sensorDrlP4.Name = "sensorDrlP4";
             this.sensorDrlP4.Size = new System.Drawing.Size(40, 40);
-            this.sensorDrlP4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorDrlP4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorDrlP4.TabIndex = 2;
             this.sensorDrlP4.TabStop = false;
             // 
             // sensorCmsP3
             // 
             this.sensorCmsP3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.sensorCmsP3.Image = global::EmotivTetris.Properties.Resources.sensorEarBlack;
+            this.sensorCmsP3.Image = ((System.Drawing.Image)(resources.GetObject("sensorCmsP3.Image")));
             this.sensorCmsP3.Location = new System.Drawing.Point(168, 312);
             this.sensorCmsP3.Name = "sensorCmsP3";
             this.sensorCmsP3.Size = new System.Drawing.Size(40, 40);
-            this.sensorCmsP3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sensorCmsP3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sensorCmsP3.TabIndex = 1;
             this.sensorCmsP3.TabStop = false;
             // 

@@ -73,9 +73,29 @@ namespace EmotivTetris.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sensorBlack30 {
+            get {
+                object obj = ResourceManager.GetObject("sensorBlack30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sensorEarBlack {
             get {
                 object obj = ResourceManager.GetObject("sensorEarBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sensorEarBlack30 {
+            get {
+                object obj = ResourceManager.GetObject("sensorEarBlack30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +113,29 @@ namespace EmotivTetris.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sensorEarGreen30 {
+            get {
+                object obj = ResourceManager.GetObject("sensorEarGreen30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sensorEarRed {
             get {
                 object obj = ResourceManager.GetObject("sensorEarRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sensorEarRed30 {
+            get {
+                object obj = ResourceManager.GetObject("sensorEarRed30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,6 +153,16 @@ namespace EmotivTetris.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sensorEarYellow30 {
+            get {
+                object obj = ResourceManager.GetObject("sensorEarYellow30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sensorGreen {
             get {
                 object obj = ResourceManager.GetObject("sensorGreen", resourceCulture);
@@ -123,9 +173,29 @@ namespace EmotivTetris.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sensorGreen30 {
+            get {
+                object obj = ResourceManager.GetObject("sensorGreen30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sensorRed {
             get {
                 object obj = ResourceManager.GetObject("sensorRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sensorRed30 {
+            get {
+                object obj = ResourceManager.GetObject("sensorRed30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +216,16 @@ namespace EmotivTetris.Properties {
         internal static System.Drawing.Bitmap sensorYellow {
             get {
                 object obj = ResourceManager.GetObject("sensorYellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sensorYellow30 {
+            get {
+                object obj = ResourceManager.GetObject("sensorYellow30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

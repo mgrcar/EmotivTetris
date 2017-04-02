@@ -71,6 +71,7 @@ namespace EmotivTetris
         static void emoEngine_MentalCommandEmoStateUpdated(object sender, EmoStateUpdatedEventArgs e)
         {
             Console.WriteLine(e.emoState.MentalCommandGetCurrentAction());
+            Console.WriteLine(e.emoState.MentalCommandGetCurrentActionPower());
         }
 
         static void emoEngine_EmoStateUpdated(object sender, EmoStateUpdatedEventArgs e)
@@ -90,6 +91,7 @@ namespace EmotivTetris
             Int32 maxChargeLevel = 0;
             es.GetBatteryChargeLevel(out chargeLevel, out maxChargeLevel);
             Console.Write(chargeLevel + "," + maxChargeLevel + ",");
+            if (signalStrength == EdkDll.IEE_SignalStrength_t.NO_SIG) { chargeLevel = 0; }
             MainForm.sensors.SetBatteryLevel(chargeLevel);
 
             foreach (var item in new[] {

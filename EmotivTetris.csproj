@@ -159,6 +159,14 @@
       <Link>edk.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Misc\sensorYellow30.png" />
+    <None Include="Misc\sensorRed30.png" />
+    <None Include="Misc\sensorGreen30.png" />
+    <None Include="Misc\sensorEarYellow30.png" />
+    <None Include="Misc\sensorEarRed30.png" />
+    <None Include="Misc\sensorEarGreen30.png" />
+    <None Include="Misc\sensorEarBlack30.png" />
+    <None Include="Misc\sensorBlack30.png" />
     <None Include="Misc\sensorEarBlack.png" />
     <None Include="Misc\sensorBlack.png" />
     <None Include="Misc\sensorYellow.png" />

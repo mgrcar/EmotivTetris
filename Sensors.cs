@@ -25,13 +25,13 @@ namespace EmotivTetris
             switch (val)
             {
                 case EdkDll.IEE_SignalStrength_t.NO_SIG:
-                    signalStrength.Image = Resources.sensorBlack;
+                    signalStrength.Image = Resources.sensorBlack30;
                     break;
                 case EdkDll.IEE_SignalStrength_t.BAD_SIG:
-                    signalStrength.Image = Resources.sensorRed;
+                    signalStrength.Image = Resources.sensorRed30;
                     break;
-                default: 
-                    signalStrength.Image = Resources.sensorGreen;
+                default:
+                    signalStrength.Image = Resources.sensorGreen30;
                     break;
             }
         }
@@ -41,19 +41,21 @@ namespace EmotivTetris
             switch (val)
             {
                 case 0:
+                    batteryLevel.Image = Resources.sensorBlack30;
+                    break;
                 case 1:
-                    batteryLevel.Image = Resources.sensorRed;
+                    batteryLevel.Image = Resources.sensorRed30;
                     break;
                 case 2:
                 case 3:
-                    batteryLevel.Image = Resources.sensorYellow;
+                    batteryLevel.Image = Resources.sensorYellow30;
                     break;
                 case 4:
                 case 5:
-                    batteryLevel.Image = Resources.sensorGreen;
+                    batteryLevel.Image = Resources.sensorGreen30;
                     break;
                 default:
-                    batteryLevel.Image = Resources.sensorEarBlack;
+                    batteryLevel.Image = Resources.sensorEarBlack30;
                     break;
             }
         }
@@ -65,16 +67,16 @@ namespace EmotivTetris
             switch (val)
             { 
                 case 0:
-                    statusLight = earSensor ? Resources.sensorEarBlack : Resources.sensorBlack;
+                    statusLight = earSensor ? Resources.sensorEarBlack30 : Resources.sensorBlack30;
                     break;
                 case 1:
-                    statusLight = earSensor ? Resources.sensorEarRed : Resources.sensorRed;
+                    statusLight = earSensor ? Resources.sensorEarRed30 : Resources.sensorRed30;
                     break;
                 case 2:
-                    statusLight = earSensor ? Resources.sensorEarYellow : Resources.sensorYellow;
+                    statusLight = earSensor ? Resources.sensorEarYellow30 : Resources.sensorYellow30;
                     break;
                 default:
-                    statusLight = earSensor ? Resources.sensorEarGreen : Resources.sensorGreen;
+                    statusLight = earSensor ? Resources.sensorEarGreen30 : Resources.sensorGreen30;
                     break;
             }
             switch (sensorName)
