@@ -332,7 +332,7 @@
             this.MaximizeBox = false;
             this.Name = "Sensors";
             this.ShowIcon = false;
-            this.Text = "Sensors";
+            this.Text = "Headset Status";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Sensors_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.batteryLevel)).EndInit();

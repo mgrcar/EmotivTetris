@@ -11,6 +11,7 @@ namespace EmotivTetris
             = -1;
         static EmoEngine emoEngine 
             = EmoEngine.Instance;
+        static MainForm mainForm;
 
         static void emoEngine_UserAdded_Event(object sender, EmoEngineEventArgs e)
         {
@@ -30,48 +31,15 @@ namespace EmotivTetris
 
             Console.WriteLine("Current config: {0} {1} {2} {3} {4}", EPOCmode, eegRate, eegRes, memsRate, memsRes);
 
-            Console.WriteLine(emoEngine.MentalCommandGetOverallSkillRating((uint)userID));
-
-            //\param EPOCmode
-            //--- If 0, then EPOC mode is EPOC.
-            //--- If 1, then EPOC mode is EPOC+.
-            //\param eegRate
-            //--- If 0, then EEG sample rate is 128Hz.
-            //--- If 1, then EEG sample rate is 256Hz.
-            //\param eegRes
-            //--- If 0, then EEG resolution is 14bit.
-            //--- If 1, then EEG resolution is 16bit.
-            //\param memsRate
-            //--- If 0, then motion sample rate is OFF.
-            //--- If 1, then motion sample rate is 32Hz.
-            //--- If 2, then motion sample rate is 64Hz.
-            //--- If 3, then motion sample rate is 128Hz.
-            //\param memsRes
-            //--- If 0, then motion resolution is 12bit.
-            //--- If 1, then motion resolution is 14bit.
-            //--- If 2, then motion resolution is 16bit.
-
-            //if (EPOCmode != 1)
-            //{
-            //    emoEngine.SetHeadsetSettings(
-            //        (uint)userID,
-            //        EPOCmode: 0,
-            //        eegRate: 0,
-            //        eegRes: 0,
-            //        memsRate: 0,
-            //        memsRes: 0
-            //    );
-            //    emoEngine.Disconnect();
-            //    Application.Exit();
-            //}
-
             Console.WriteLine(EdkDll.IEE_LoadUserProfile((uint)userID, @"C:\Documents and Settings\All Users\Application Data\Emotiv\mIHA.emu"));
         }
 
         static void emoEngine_MentalCommandEmoStateUpdated(object sender, EmoStateUpdatedEventArgs e)
         {
-            Console.WriteLine(e.emoState.MentalCommandGetCurrentAction());
-            Console.WriteLine(e.emoState.MentalCommandGetCurrentActionPower());
+            var mentalCommand = e.emoState.MentalCommandGetCurrentAction();
+            float power = e.emoState.MentalCommandGetCurrentActionPower();
+            Console.WriteLine("Mental command detected: {0} ({1})", mentalCommand, power);
+            mainForm.SetMentalCommand(mentalCommand, power);
         }
 
         static void emoEngine_EmoStateUpdated(object sender, EmoStateUpdatedEventArgs e)
@@ -134,19 +102,23 @@ namespace EmotivTetris
             emoEngine.Connect();
             Console.WriteLine("Connected.");
 
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(defaultValue: false);
+
+            mainForm = new MainForm();
+
             var emotivThread = new Thread(() => {
-                while (true) {
+                while (true)
+                {
                     emoEngine.ProcessEvents();
                     Thread.Sleep(100);
                     if (abort) { break; }
                 }
             });
-            
-            emotivThread.Start();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(defaultValue: false);
-            Application.Run(new MainForm());
+            emotivThread.Start();
+            
+            Application.Run(mainForm);
 
             abort = true; // stop the thread gracefully
         }
