@@ -39,7 +39,7 @@ namespace EmotivTetris
             var mentalCommand = e.emoState.MentalCommandGetCurrentAction();
             float power = e.emoState.MentalCommandGetCurrentActionPower();
             Console.WriteLine("Mental command detected: {0} ({1})", mentalCommand, power);
-            mainForm.SetMentalCommand(mentalCommand, power);
+            mainForm.FireMentalCommand(mentalCommand, power);
         }
 
         static void emoEngine_EmoStateUpdated(object sender, EmoStateUpdatedEventArgs e)

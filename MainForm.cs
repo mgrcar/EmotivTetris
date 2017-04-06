@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using Emotiv;
-using System.Runtime.InteropServices;
-using System.Threading;
 
 namespace EmotivTetris
 {
@@ -10,16 +8,23 @@ namespace EmotivTetris
     {
         private class CommandState
         {
-            public bool Down
+            public bool ButtonDown
                 = false;
             public float Pwr
                 = 0f;
-            public float PwrMax
+            public float Max
+                = 0f;
+            public float Min
                 = 0f;
             public float DownThresh
                 = 0.1f;
             public float UpThresh
                 = 0.1f;
+
+            public Action OnButtonDown
+                = null;
+            public Action OnButtonUp
+                = null;
 
             public int PwrInt
             {
@@ -29,18 +34,39 @@ namespace EmotivTetris
             public void FireEvents(float pwr)
             {
                 Pwr = pwr;
-                // TODO
+                if (!ButtonDown)
+                {
+                    if (pwr < Min) { Min = pwr; }
+                    if (pwr > Min + DownThresh)
+                    {
+                        if (OnButtonDown != null) 
+                        { 
+                            OnButtonDown(); 
+                        }
+                        ButtonDown = true;
+                        Max = pwr;
+                    }
+                }
+                else // ButtonDown
+                {
+                    if (pwr > Max) { Max = pwr; }
+                    if (pwr < Max - UpThresh)
+                    {
+                        if (OnButtonUp != null)
+                        {
+                            OnButtonUp();
+                        }
+                        ButtonDown = false;
+                        Min = pwr;
+                    }
+                }
             }
         }
 
-        private CommandState commandStateLeft 
-            = new CommandState();
-        private CommandState commandStateRight 
-            = new CommandState();
-        private CommandState commandStateTurn 
-            = new CommandState();
-        private CommandState commandStateDrop
-            = new CommandState();
+        private CommandState commandStateLeft;
+        private CommandState commandStateRight;
+        private CommandState commandStateTurn;
+        private CommandState commandStateDrop;
 
         public static HeadsetStatus headsetStatus
             = new HeadsetStatus();
@@ -49,7 +75,23 @@ namespace EmotivTetris
         {
             InitializeComponent();
             WebBrowserHelper.ClearCache();
-            webBrowser.Navigate("http://localhost/tetromini/firsttetrisever.html");
+            webBrowser.Navigate(Config.GameUrl);
+            commandStateLeft = new CommandState() {
+                OnButtonDown = () => FireKeyEvent("keydown", 37),
+                OnButtonUp = () => FireKeyEvent("keyup", 37)
+            };
+            commandStateRight = new CommandState() {
+                OnButtonDown = () => FireKeyEvent("keydown", 39),
+                OnButtonUp = () => FireKeyEvent("keyup", 39)
+            };
+            commandStateTurn = new CommandState() {
+                OnButtonDown = () => FireKeyEvent("keydown", 38), 
+                OnButtonUp = () => FireKeyEvent("keyup", 38) 
+            };
+            commandStateDrop = new CommandState() {
+                OnButtonDown = () => FireKeyEvent("keydown", 40), 
+                OnButtonUp = () => FireKeyEvent("keyup", 40) 
+            };
         }
 
         private void btnHeadsetStatus(object sender, EventArgs e)
@@ -57,7 +99,7 @@ namespace EmotivTetris
             headsetStatus.Show();
         }
 
-        public void SetMentalCommand(EdkDll.IEE_MentalCommandAction_t command, float power)
+        public void FireMentalCommand(EdkDll.IEE_MentalCommandAction_t command, float power)
         {
             foreach (var item in new[] { 
                 new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_LEFT, state = commandStateLeft },
@@ -86,16 +128,6 @@ namespace EmotivTetris
                 e.which = {1};
                 $(document).trigger(e);", eventName, keyCode
             )});
-        }
-
-        private void btnCommandLeftDown(object sender, MouseEventArgs e)
-        {
-            FireKeyEvent("keydown", 37); // right = 39
-        }
-
-        private void btnCommandLeftUp(object sender, MouseEventArgs e)
-        {
-            FireKeyEvent("keyup", 37);
         }
     }
 }
