@@ -96,6 +96,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -107,11 +108,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sensors.cs">
+    <Compile Include="Config.cs" />
+    <Compile Include="HeadsetStatus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sensors.Designer.cs">
-      <DependentUpon>Sensors.cs</DependentUpon>
+    <Compile Include="HeadsetStatus.Designer.cs">
+      <DependentUpon>HeadsetStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -122,8 +124,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebBrowserHelper.cs" />
-    <EmbeddedResource Include="Sensors.resx">
-      <DependentUpon>Sensors.cs</DependentUpon>
+    <EmbeddedResource Include="HeadsetStatus.resx">
+      <DependentUpon>HeadsetStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -138,6 +140,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

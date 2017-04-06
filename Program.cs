@@ -31,7 +31,7 @@ namespace EmotivTetris
 
             Console.WriteLine("Current config: {0} {1} {2} {3} {4}", EPOCmode, eegRate, eegRes, memsRate, memsRes);
 
-            Console.WriteLine(EdkDll.IEE_LoadUserProfile((uint)userID, @"C:\Documents and Settings\All Users\Application Data\Emotiv\mIHA.emu"));
+            Console.WriteLine(EdkDll.IEE_LoadUserProfile((uint)userID, Config.ProfileFileName));
         }
 
         static void emoEngine_MentalCommandEmoStateUpdated(object sender, EmoStateUpdatedEventArgs e)
@@ -53,14 +53,14 @@ namespace EmotivTetris
 
             EdkDll.IEE_SignalStrength_t signalStrength = es.GetWirelessSignalStatus();
             Console.Write(signalStrength + ",");
-            MainForm.sensors.SetSignalStrength(signalStrength);
+            MainForm.headsetStatus.SetSignalStrength(signalStrength);
 
             Int32 chargeLevel = 0;
             Int32 maxChargeLevel = 0;
             es.GetBatteryChargeLevel(out chargeLevel, out maxChargeLevel);
             Console.Write(chargeLevel + "," + maxChargeLevel + ",");
             if (signalStrength == EdkDll.IEE_SignalStrength_t.NO_SIG) { chargeLevel = 0; }
-            MainForm.sensors.SetBatteryLevel(chargeLevel);
+            MainForm.headsetStatus.SetBatteryLevel(chargeLevel);
 
             foreach (var item in new[] {
                 new { ch = EdkDll.IEE_InputChannels_t.IEE_CHAN_CMS, chStr = "CMS" },
@@ -84,7 +84,7 @@ namespace EmotivTetris
                 int val = (int)es.GetContactQuality((int)item.ch);
                 Console.Write(val + ",");
                 if (signalStrength == EdkDll.IEE_SignalStrength_t.NO_SIG) { val = 0; }
-                MainForm.sensors.SetSensor(item.chStr, val);
+                MainForm.headsetStatus.SetSensor(item.chStr, val);
             }
 
             Console.WriteLine();

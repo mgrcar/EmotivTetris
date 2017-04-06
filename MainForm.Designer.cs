@@ -39,6 +39,8 @@
             this.barPwrRight = new System.Windows.Forms.ProgressBar();
             this.barPwrLeft = new System.Windows.Forms.ProgressBar();
             this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +55,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -140,7 +144,27 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Status";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.btnHeadsetStatus);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(537, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 42);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "<<";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCommandLeftDown);
+            this.button1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCommandLeftUp);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(618, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 42);
+            this.button2.TabIndex = 13;
+            this.button2.Text = ">>";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -170,6 +194,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

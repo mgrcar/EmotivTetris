@@ -7,9 +7,9 @@ using Emotiv;
 
 namespace EmotivTetris
 {
-    public partial class Sensors : Form
+    public partial class HeadsetStatus : Form
     {
-        public Sensors()
+        public HeadsetStatus()
         {
             InitializeComponent();
         }

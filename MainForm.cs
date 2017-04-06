@@ -1,13 +1,49 @@
 ﻿using System;
 using System.Windows.Forms;
 using Emotiv;
+using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace EmotivTetris
 {
     public partial class MainForm : Form
     {
-        public static Sensors sensors
-            = new Sensors();
+        private class CommandState
+        {
+            public bool Down
+                = false;
+            public float Pwr
+                = 0f;
+            public float PwrMax
+                = 0f;
+            public float DownThresh
+                = 0.1f;
+            public float UpThresh
+                = 0.1f;
+
+            public int PwrInt
+            {
+                get { return Math.Min(100, (int)(Pwr * 100f)); }
+            }
+
+            public void FireEvents(float pwr)
+            {
+                Pwr = pwr;
+                // TODO
+            }
+        }
+
+        private CommandState commandStateLeft 
+            = new CommandState();
+        private CommandState commandStateRight 
+            = new CommandState();
+        private CommandState commandStateTurn 
+            = new CommandState();
+        private CommandState commandStateDrop
+            = new CommandState();
+
+        public static HeadsetStatus headsetStatus
+            = new HeadsetStatus();
 
         public MainForm()
         {
@@ -16,53 +52,50 @@ namespace EmotivTetris
             webBrowser.Navigate("http://localhost/tetromini/firsttetrisever.html");
         }
 
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    // left
-        //    webBrowser.Focus();
-        //    SendKeys.Send("{LEFT}");
-        //}
-
-        //private void button3_Click(object sender, EventArgs e)
-        //{
-        //    // right
-        //    webBrowser.Focus();
-        //    SendKeys.Send("{RIGHT}");
-        //}
-
-        private void button4_Click(object sender, EventArgs e)
+        private void btnHeadsetStatus(object sender, EventArgs e)
         {
-            sensors.Show();
+            headsetStatus.Show();
         }
 
         public void SetMentalCommand(EdkDll.IEE_MentalCommandAction_t command, float power)
         {
-            int pwr = Math.Min(100, (int)(power * 100f));
-            int pwrLeft = 0, pwrRight = 0, pwrTurn = 0, pwrDrop = 0;
-            switch (command)
-            {
-                case EdkDll.IEE_MentalCommandAction_t.MC_LEFT:
-                    pwrLeft = pwr;
-                    break;
-                case EdkDll.IEE_MentalCommandAction_t.MC_RIGHT:
-                    pwrRight = pwr;
-                    break;
-                case EdkDll.IEE_MentalCommandAction_t.MC_PULL:
-                    pwrTurn = pwr;
-                    break;
-                case EdkDll.IEE_MentalCommandAction_t.MC_PUSH:
-                    pwrDrop = pwr;
-                    break;
-            }
-            foreach (var item in new [] { 
-                new { bar = barPwrLeft, val = pwrLeft },
-                new { bar = barPwrRight, val = pwrRight },
-                new { bar = barPwrTurn, val = pwrTurn },
-                new { bar = barPwrDrop, val = pwrDrop }
+            foreach (var item in new[] { 
+                new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_LEFT, state = commandStateLeft },
+                new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_RIGHT, state = commandStateRight },
+                new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_PULL, state = commandStateTurn },
+                new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_PUSH, state = commandStateDrop }
             })
             {
-                item.bar.Value = item.val;
+                item.state.FireEvents(command == item.cmd ? power : 0f);
             }
+            foreach (var item in new[] { 
+                new { bar = barPwrLeft, state = commandStateLeft },
+                new { bar = barPwrRight, state = commandStateRight },
+                new { bar = barPwrTurn, state = commandStateTurn },
+                new { bar = barPwrDrop, state = commandStateDrop }
+            })
+            {
+                item.bar.Value = item.state.PwrInt;
+            }
+        }
+
+        private void FireKeyEvent(string eventName, int keyCode)
+        {
+            webBrowser.Document.InvokeScript("eval", new[] { string.Format(@"
+                var e = $.Event('{0}');
+                e.which = {1};
+                $(document).trigger(e);", eventName, keyCode
+            )});
+        }
+
+        private void btnCommandLeftDown(object sender, MouseEventArgs e)
+        {
+            FireKeyEvent("keydown", 37); // right = 39
+        }
+
+        private void btnCommandLeftUp(object sender, MouseEventArgs e)
+        {
+            FireKeyEvent("keyup", 37);
         }
     }
 }

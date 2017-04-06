@@ -1,6 +1,6 @@
 ﻿namespace EmotivTetris
 {
-    partial class Sensors
+    partial class HeadsetStatus
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sensors));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HeadsetStatus));
             this.lblSignalStrength = new System.Windows.Forms.Label();
             this.lblBatteryLevel = new System.Windows.Forms.Label();
             this.batteryLevel = new System.Windows.Forms.PictureBox();
