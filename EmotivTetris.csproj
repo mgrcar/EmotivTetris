@@ -150,6 +150,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ReadMe.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EmotivSdk\examples_basic\C#\DotNetEmotivSDK\DotNetEmotivSDK.csproj">
@@ -158,10 +159,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\EmotivSdk\bin\win32\edk.dll">
-      <Link>edk.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Misc\sensorYellow30.png" />
     <None Include="Misc\sensorRed30.png" />
     <None Include="Misc\sensorGreen30.png" />
@@ -179,6 +176,14 @@
     <None Include="Misc\sensorEarRed.png" />
     <None Include="Misc\sensorEarGreen.png" />
     <None Include="Misc\sensors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="edk.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="edk_utils.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,18 +18,18 @@ namespace EmotivTetris
             Console.WriteLine("User Added Event has occured (userID = {0}).", e.userId);
             userID = (int)e.userId;
 
-            uint EPOCmode, eegRate, eegRes, memsRate, memsRes;
+            //uint EPOCmode, eegRate, eegRes, memsRate, memsRes;
 
-            emoEngine.GetHeadsetSettings(
-                (uint)userID,
-                out EPOCmode,
-                out eegRate,
-                out eegRes,
-                out memsRate,
-                out memsRes
-            );
+            //emoEngine.GetHeadsetSettings(
+            //    (uint)userID,
+            //    out EPOCmode,
+            //    out eegRate,
+            //    out eegRes,
+            //    out memsRate,
+            //    out memsRes
+            //);
 
-            Console.WriteLine("Current config: {0} {1} {2} {3} {4}", EPOCmode, eegRate, eegRes, memsRate, memsRes);
+            //Console.WriteLine("Current config: {0} {1} {2} {3} {4}", EPOCmode, eegRate, eegRes, memsRate, memsRes);
 
             Console.WriteLine(EdkDll.IEE_LoadUserProfile((uint)userID, Config.ProfileFileName));
         }

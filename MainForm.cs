@@ -123,11 +123,13 @@ namespace EmotivTetris
 
         private void FireKeyEvent(string eventName, int keyCode)
         {
-            webBrowser.Document.InvokeScript("eval", new[] { string.Format(@"
-                var e = $.Event('{0}');
-                e.which = {1};
-                $(document).trigger(e);", eventName, keyCode
-            )});
+            webBrowser.Invoke(new MethodInvoker(() => {
+                webBrowser.Document.InvokeScript("eval", new[] { string.Format(@"
+                    var e = $.Event('{0}');
+                    e.which = {1};
+                    $(document).trigger(e);", eventName, keyCode
+                )});
+            }));
         }
     }
 }
