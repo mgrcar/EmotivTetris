@@ -12,6 +12,23 @@ namespace EmotivTetris
         public HeadsetStatus()
         {
             InitializeComponent();
+            sensorAf3Fp1.Parent =
+            sensorO2.Parent =
+            sensorO1.Parent =
+            sensorP8.Parent =
+            sensorP7.Parent =
+            sensorF8.Parent =
+            sensorF7.Parent =
+            sensorAf4Fp2.Parent =
+            sensorAf3Fp1.Parent =
+            sensorF4.Parent =
+            sensorF3.Parent =
+            sensorFc6.Parent =
+            sensorFc5.Parent =
+            sensorT7.Parent =
+            sensorT8.Parent =
+            sensorDrlP4.Parent =
+            sensorCmsP3.Parent = headImage;
         }
 
         private void Sensors_FormClosing(object sender, FormClosingEventArgs e)

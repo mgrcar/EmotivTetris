@@ -115,9 +115,9 @@
             // 
             // sensorO2
             // 
-            this.sensorO2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorO2.BackColor = System.Drawing.Color.Transparent;
             this.sensorO2.Image = ((System.Drawing.Image)(resources.GetObject("sensorO2.Image")));
-            this.sensorO2.Location = new System.Drawing.Point(328, 432);
+            this.sensorO2.Location = new System.Drawing.Point(321, 432);
             this.sensorO2.Name = "sensorO2";
             this.sensorO2.Size = new System.Drawing.Size(40, 40);
             this.sensorO2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -126,9 +126,9 @@
             // 
             // sensorO1
             // 
-            this.sensorO1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorO1.BackColor = System.Drawing.Color.Transparent;
             this.sensorO1.Image = ((System.Drawing.Image)(resources.GetObject("sensorO1.Image")));
-            this.sensorO1.Location = new System.Drawing.Point(248, 432);
+            this.sensorO1.Location = new System.Drawing.Point(249, 432);
             this.sensorO1.Name = "sensorO1";
             this.sensorO1.Size = new System.Drawing.Size(40, 40);
             this.sensorO1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -137,9 +137,9 @@
             // 
             // sensorP8
             // 
-            this.sensorP8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorP8.BackColor = System.Drawing.Color.Transparent;
             this.sensorP8.Image = ((System.Drawing.Image)(resources.GetObject("sensorP8.Image")));
-            this.sensorP8.Location = new System.Drawing.Point(368, 368);
+            this.sensorP8.Location = new System.Drawing.Point(369, 368);
             this.sensorP8.Name = "sensorP8";
             this.sensorP8.Size = new System.Drawing.Size(40, 40);
             this.sensorP8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -148,9 +148,9 @@
             // 
             // sensorP7
             // 
-            this.sensorP7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorP7.BackColor = System.Drawing.Color.Transparent;
             this.sensorP7.Image = ((System.Drawing.Image)(resources.GetObject("sensorP7.Image")));
-            this.sensorP7.Location = new System.Drawing.Point(200, 368);
+            this.sensorP7.Location = new System.Drawing.Point(201, 368);
             this.sensorP7.Name = "sensorP7";
             this.sensorP7.Size = new System.Drawing.Size(40, 40);
             this.sensorP7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -159,9 +159,9 @@
             // 
             // sensorF8
             // 
-            this.sensorF8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorF8.BackColor = System.Drawing.Color.Transparent;
             this.sensorF8.Image = ((System.Drawing.Image)(resources.GetObject("sensorF8.Image")));
-            this.sensorF8.Location = new System.Drawing.Point(400, 160);
+            this.sensorF8.Location = new System.Drawing.Point(401, 160);
             this.sensorF8.Name = "sensorF8";
             this.sensorF8.Size = new System.Drawing.Size(40, 40);
             this.sensorF8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -170,9 +170,9 @@
             // 
             // sensorF7
             // 
-            this.sensorF7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorF7.BackColor = System.Drawing.Color.Transparent;
             this.sensorF7.Image = ((System.Drawing.Image)(resources.GetObject("sensorF7.Image")));
-            this.sensorF7.Location = new System.Drawing.Point(168, 160);
+            this.sensorF7.Location = new System.Drawing.Point(169, 160);
             this.sensorF7.Name = "sensorF7";
             this.sensorF7.Size = new System.Drawing.Size(40, 40);
             this.sensorF7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -181,9 +181,9 @@
             // 
             // sensorAf4Fp2
             // 
-            this.sensorAf4Fp2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorAf4Fp2.BackColor = System.Drawing.Color.Transparent;
             this.sensorAf4Fp2.Image = ((System.Drawing.Image)(resources.GetObject("sensorAf4Fp2.Image")));
-            this.sensorAf4Fp2.Location = new System.Drawing.Point(352, 112);
+            this.sensorAf4Fp2.Location = new System.Drawing.Point(353, 112);
             this.sensorAf4Fp2.Name = "sensorAf4Fp2";
             this.sensorAf4Fp2.Size = new System.Drawing.Size(40, 40);
             this.sensorAf4Fp2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -192,9 +192,9 @@
             // 
             // sensorAf3Fp1
             // 
-            this.sensorAf3Fp1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorAf3Fp1.BackColor = System.Drawing.Color.Transparent;
             this.sensorAf3Fp1.Image = ((System.Drawing.Image)(resources.GetObject("sensorAf3Fp1.Image")));
-            this.sensorAf3Fp1.Location = new System.Drawing.Point(216, 112);
+            this.sensorAf3Fp1.Location = new System.Drawing.Point(217, 112);
             this.sensorAf3Fp1.Name = "sensorAf3Fp1";
             this.sensorAf3Fp1.Size = new System.Drawing.Size(40, 40);
             this.sensorAf3Fp1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -203,9 +203,9 @@
             // 
             // sensorF4
             // 
-            this.sensorF4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorF4.BackColor = System.Drawing.Color.Transparent;
             this.sensorF4.Image = ((System.Drawing.Image)(resources.GetObject("sensorF4.Image")));
-            this.sensorF4.Location = new System.Drawing.Point(320, 160);
+            this.sensorF4.Location = new System.Drawing.Point(321, 160);
             this.sensorF4.Name = "sensorF4";
             this.sensorF4.Size = new System.Drawing.Size(40, 40);
             this.sensorF4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -214,9 +214,9 @@
             // 
             // sensorF3
             // 
-            this.sensorF3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorF3.BackColor = System.Drawing.Color.Transparent;
             this.sensorF3.Image = ((System.Drawing.Image)(resources.GetObject("sensorF3.Image")));
-            this.sensorF3.Location = new System.Drawing.Point(248, 160);
+            this.sensorF3.Location = new System.Drawing.Point(249, 160);
             this.sensorF3.Name = "sensorF3";
             this.sensorF3.Size = new System.Drawing.Size(40, 40);
             this.sensorF3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -225,9 +225,9 @@
             // 
             // sensorFc6
             // 
-            this.sensorFc6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorFc6.BackColor = System.Drawing.Color.Transparent;
             this.sensorFc6.Image = ((System.Drawing.Image)(resources.GetObject("sensorFc6.Image")));
-            this.sensorFc6.Location = new System.Drawing.Point(368, 200);
+            this.sensorFc6.Location = new System.Drawing.Point(369, 200);
             this.sensorFc6.Name = "sensorFc6";
             this.sensorFc6.Size = new System.Drawing.Size(40, 40);
             this.sensorFc6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -236,9 +236,9 @@
             // 
             // sensorFc5
             // 
-            this.sensorFc5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorFc5.BackColor = System.Drawing.Color.Transparent;
             this.sensorFc5.Image = ((System.Drawing.Image)(resources.GetObject("sensorFc5.Image")));
-            this.sensorFc5.Location = new System.Drawing.Point(200, 200);
+            this.sensorFc5.Location = new System.Drawing.Point(201, 200);
             this.sensorFc5.Name = "sensorFc5";
             this.sensorFc5.Size = new System.Drawing.Size(40, 40);
             this.sensorFc5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -247,9 +247,9 @@
             // 
             // sensorT7
             // 
-            this.sensorT7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorT7.BackColor = System.Drawing.Color.Transparent;
             this.sensorT7.Image = ((System.Drawing.Image)(resources.GetObject("sensorT7.Image")));
-            this.sensorT7.Location = new System.Drawing.Point(152, 248);
+            this.sensorT7.Location = new System.Drawing.Point(153, 248);
             this.sensorT7.Name = "sensorT7";
             this.sensorT7.Size = new System.Drawing.Size(40, 40);
             this.sensorT7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -258,9 +258,9 @@
             // 
             // sensorT8
             // 
-            this.sensorT8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorT8.BackColor = System.Drawing.Color.Transparent;
             this.sensorT8.Image = ((System.Drawing.Image)(resources.GetObject("sensorT8.Image")));
-            this.sensorT8.Location = new System.Drawing.Point(416, 248);
+            this.sensorT8.Location = new System.Drawing.Point(417, 248);
             this.sensorT8.Name = "sensorT8";
             this.sensorT8.Size = new System.Drawing.Size(40, 40);
             this.sensorT8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -269,9 +269,9 @@
             // 
             // sensorDrlP4
             // 
-            this.sensorDrlP4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorDrlP4.BackColor = System.Drawing.Color.Transparent;
             this.sensorDrlP4.Image = ((System.Drawing.Image)(resources.GetObject("sensorDrlP4.Image")));
-            this.sensorDrlP4.Location = new System.Drawing.Point(400, 312);
+            this.sensorDrlP4.Location = new System.Drawing.Point(401, 312);
             this.sensorDrlP4.Name = "sensorDrlP4";
             this.sensorDrlP4.Size = new System.Drawing.Size(40, 40);
             this.sensorDrlP4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -280,9 +280,9 @@
             // 
             // sensorCmsP3
             // 
-            this.sensorCmsP3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.sensorCmsP3.BackColor = System.Drawing.Color.Transparent;
             this.sensorCmsP3.Image = ((System.Drawing.Image)(resources.GetObject("sensorCmsP3.Image")));
-            this.sensorCmsP3.Location = new System.Drawing.Point(168, 312);
+            this.sensorCmsP3.Location = new System.Drawing.Point(169, 312);
             this.sensorCmsP3.Name = "sensorCmsP3";
             this.sensorCmsP3.Size = new System.Drawing.Size(40, 40);
             this.sensorCmsP3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -300,7 +300,7 @@
             this.headImage.TabIndex = 0;
             this.headImage.TabStop = false;
             // 
-            // Sensors
+            // HeadsetStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -330,7 +330,7 @@
             this.Controls.Add(this.headImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Sensors";
+            this.Name = "HeadsetStatus";
             this.ShowIcon = false;
             this.Text = "Headset Status";
             this.TopMost = true;

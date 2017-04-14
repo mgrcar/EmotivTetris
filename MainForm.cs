@@ -1,63 +1,101 @@
 ﻿using System;
 using System.Windows.Forms;
 using Emotiv;
+using System.Threading;
 
 namespace EmotivTetris
 {
     public partial class MainForm : Form
     {
+        private class ThreadControl
+        {
+            public bool stop;
+            public bool wait;
+
+            public void Stop()
+            {
+                stop = true;
+                while (wait) { Thread.Sleep(1); }
+            }
+        }
+
         private class CommandState
         {
-            public bool ButtonDown
+            public bool buttonDown
                 = false;
-            public float Pwr
-                = 0f;
-            public float Max
-                = 0f;
-            public float Min
-                = 0f;
-            public float DownThresh
-                = 0.1f;
-            public float UpThresh
-                = 0.1f;
-
-            public Action OnButtonDown
+            public ThreadControl threadCtrl
                 = null;
-            public Action OnButtonUp
+            public float pwr
+                = 0f;
+            public float max
+                = 0f;
+            public float min
+                = 0f;
+            public float downThresh
+                = 0.2f;
+            public float upThresh
+                = 0.2f;
+
+            public Action onButtonDown
+                = null;
+            public Action onButtonUp
                 = null;
 
             public int PwrInt
             {
-                get { return Math.Min(100, (int)(Pwr * 100f)); }
+                get { return Math.Min(100, (int)(pwr * 100f)); }
+            }
+
+            private ThreadControl StartButtonDown()
+            {
+                var threadCtrl = new ThreadControl { 
+                    stop = false, 
+                    wait = false 
+                };
+                new Thread(() => {
+                    while (!threadCtrl.stop)
+                    {
+                        onButtonDown();
+                        threadCtrl.wait = false;
+                        Thread.Sleep(600); // TODO: make this configurable
+                        threadCtrl.wait = true;
+                    }
+                    threadCtrl.wait = false;
+                }).Start();
+                return threadCtrl;
             }
 
             public void FireEvents(float pwr)
             {
-                Pwr = pwr;
-                if (!ButtonDown)
+                this.pwr = pwr;
+                if (!buttonDown)
                 {
-                    if (pwr < Min) { Min = pwr; }
-                    if (pwr > Min + DownThresh)
+                    if (pwr < min) { min = pwr; }
+                    if (pwr > min + downThresh)
                     {
-                        if (OnButtonDown != null) 
-                        { 
-                            OnButtonDown(); 
+                        if (onButtonDown != null) 
+                        {
+                            threadCtrl = StartButtonDown();
                         }
-                        ButtonDown = true;
-                        Max = pwr;
+                        buttonDown = true;
+                        max = pwr;
                     }
                 }
                 else // ButtonDown
                 {
-                    if (pwr > Max) { Max = pwr; }
-                    if (pwr < Max - UpThresh)
+                    if (pwr > max) { max = pwr; }
+                    if (pwr < max - upThresh)
                     {
-                        if (OnButtonUp != null)
+                        if (threadCtrl != null)
                         {
-                            OnButtonUp();
+                            threadCtrl.Stop();
                         }
-                        ButtonDown = false;
-                        Min = pwr;
+                        if (onButtonUp != null)
+                        {
+                            onButtonUp();
+                        }
+                        buttonDown = false;
+                        min = pwr;
                     }
                 }
             }
@@ -77,20 +115,20 @@ namespace EmotivTetris
             WebBrowserHelper.ClearCache();
             webBrowser.Navigate(Config.GameUrl);
             commandStateLeft = new CommandState() {
-                OnButtonDown = () => FireKeyEvent("keydown", 37),
-                OnButtonUp = () => FireKeyEvent("keyup", 37)
+                onButtonDown = () => FireKeyEvent("keydown", 37),
+                onButtonUp = () => FireKeyEvent("keyup", 37)
             };
             commandStateRight = new CommandState() {
-                OnButtonDown = () => FireKeyEvent("keydown", 39),
-                OnButtonUp = () => FireKeyEvent("keyup", 39)
+                onButtonDown = () => FireKeyEvent("keydown", 39),
+                onButtonUp = () => FireKeyEvent("keyup", 39)
             };
             commandStateTurn = new CommandState() {
-                OnButtonDown = () => FireKeyEvent("keydown", 38), 
-                OnButtonUp = () => FireKeyEvent("keyup", 38) 
+                onButtonDown = () => FireKeyEvent("keydown", 38), 
+                onButtonUp = () => FireKeyEvent("keyup", 38) 
             };
             commandStateDrop = new CommandState() {
-                OnButtonDown = () => FireKeyEvent("keydown", 40), 
-                OnButtonUp = () => FireKeyEvent("keyup", 40) 
+                //onButtonDown = () => FireKeyEvent("keydown", 40), 
+                //onButtonUp = () => FireKeyEvent("keyup", 40) 
             };
         }
 
@@ -104,8 +142,8 @@ namespace EmotivTetris
             foreach (var item in new[] { 
                 new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_LEFT, state = commandStateLeft },
                 new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_RIGHT, state = commandStateRight },
-                new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_PULL, state = commandStateTurn },
-                new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_PUSH, state = commandStateDrop }
+                new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_PUSH, state = commandStateTurn },
+                new { cmd = EdkDll.IEE_MentalCommandAction_t.MC_PULL, state = commandStateDrop }
             })
             {
                 item.state.FireEvents(command == item.cmd ? power : 0f);
